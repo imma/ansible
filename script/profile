@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+source vendor/virtualenv/bin/activate
