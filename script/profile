@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
+VIRTUAL_ENV_DISABLE_PROMPT=1
 source vendor/virtualenv/bin/activate
