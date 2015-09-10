@@ -3,9 +3,6 @@
 set -efu
 
 function main {
-  sudo easy_install pip
-  sudo pip install virtualenv
-  
   mkdir -p vendor/virtualenv
   virtualenv vendor/virtualenv
   set +u; source vendor/virtualenv/bin/activate; set -u

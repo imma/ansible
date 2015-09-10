@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-VIRTUAL_ENV_DISABLE_PROMPT=1
-source vendor/virtualenv/bin/activate
+function profile {
+  local shome="$(unset CDPATH; cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"
+  PATH="$shome/bin:$shome/exec:$shome/vendor/virtualenv/bin:$PATH"
+}
+
+profile
