@@ -4,7 +4,7 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
   
-  ansible localhost -c local -m setup -o | sed 's#^[^{]*##' | jq .
+  ansible localhost -c local -m setup -o | sed 's#^[^{]*##' | jq "$@"
 }
 
 source sub "$BASH_SOURCE" "$@"
