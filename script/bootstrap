@@ -3,7 +3,7 @@
 set -efu
 
 function main {
-  app compile virtualenv
+  block compile virtualenv
   ln -nfs \
     ../vendor/virtualenv/bin/ansible \
     ../vendor/virtualenv/bin/ansible-doc \
