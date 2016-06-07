@@ -1,5 +1,1 @@
-Setup
-=====
-
-For bash, source `script/profile` to expose the `ansible` command.
-Requires the `defn/app` project installed and sourced.
+Visit http://defn.sh/ansible/ or open `docs/index.html`
