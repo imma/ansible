@@ -4,7 +4,7 @@ function version {
   local shome="${_ansible_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   source "$shome/script/profile"
 
-  local ver_ansible="$(ansible --version 2>&- | awk 'NR == 1 {print $2}' || true)"
+  local ver_ansible="$(ansible --version 2>/dev/null | awk 'NR == 1 {print $2}' || true)"
   jq -n --arg ansible "$ver_ansible" '{ansible: $ansible}'
 }
 
