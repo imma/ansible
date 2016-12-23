@@ -1,6 +1,2 @@
 /ansible
-/ansible-doc
-/ansible-galaxy
-/ansible-playbook
-/ansible-pull
-/ansible-vault
+/ansible-*

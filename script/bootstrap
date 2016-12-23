@@ -3,15 +3,12 @@
 set -efu
 
 function main {
-  block compile virtualenv27
-  ln -nfs \
+  set -x
+  block compile virtualenv
+  (set +f; cd bin && ln -nfs \
     ../vendor/virtualenv/bin/ansible \
-    ../vendor/virtualenv/bin/ansible-doc \
-    ../vendor/virtualenv/bin/ansible-galaxy \
-    ../vendor/virtualenv/bin/ansible-playbook \
-    ../vendor/virtualenv/bin/ansible-pull \
-    ../vendor/virtualenv/bin/ansible-vault \
-    bin/
+    ../vendor/virtualenv/bin/ansible-* \
+    .)
 }
 
 main "$@"
