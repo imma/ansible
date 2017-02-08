@@ -4,7 +4,7 @@ set -efu
 
 function main {
   set -x
-  block compile virtualenv
+  block compile virtualenv27
   (set +f; cd bin && ln -nfs \
     ../vendor/virtualenv/bin/ansible \
     ../vendor/virtualenv/bin/ansible-* \
