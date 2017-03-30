@@ -3,12 +3,6 @@
 set -efu
 
 function main {
-  case "$(uname -s)" in
-    Darwin)
-      export LANG=C
-      ;;
-  esac
-
   block compile virtualenv27
   (set +f; cd bin && ln -nfs \
     ../vendor/virtualenv/bin/ansible \
