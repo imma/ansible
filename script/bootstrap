@@ -3,7 +3,6 @@
 set -efu
 
 function main {
-  env PYTHON_VERSION_DEFAULT=27 pkg ensure textproc/py27-cElementTree textproc/py-cElementTree
   block compile virtualenv27
   (set +f; cd bin && ln -nfs \
     ../vendor/virtualenv/bin/ansible \
