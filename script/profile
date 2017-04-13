@@ -4,7 +4,7 @@ function _ansible_profile {
   local shome="${_ansible_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   PATH="$shome/bin:$PATH"
 
-  ANSIBLE_VERSION='2.2.2.0'
+  ANSIBLE_VERSION='2.3.0.0'
 }
 
 _ansible_profile
