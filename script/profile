@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 function _ansible_profile {
-  local shome="${_ansible_home:-"$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
+  local shome="${_ansible_home:="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   PATH="$shome/bin:$PATH"
 
   ANSIBLE_VERSION='2.3.1.0'
