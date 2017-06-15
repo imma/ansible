@@ -5,6 +5,7 @@ function _ansible_profile {
   PATH="$shome/bin:$PATH"
 
   ANSIBLE_VERSION='2.3.1.0'
+  ANSIBLE_CONTAINER_VERSION='0.9.1'
 }
 
 _ansible_profile
