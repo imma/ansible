@@ -4,8 +4,8 @@ function _ansible_profile {
   local shome="${_ansible_home:="$(cd -P -- "$(dirname -- "$BASH_SOURCE")/.." && pwd -P)"}"
   PATH="$shome/bin:$PATH"
 
-  ANSIBLE_VERSION='2.3.1.0'
-  ANSIBLE_CONTAINER_VERSION='0.9.1'
+  ANSIBLE_VERSION="$(cat "$shome/.ansible-version.json" | jq -r '.[].version')"
+  ANSIBLE_CONTAINER_VERSION="$(cat "$shome/.ansible-container-version.json" | jq -r '.[].version')"
 }
 
 _ansible_profile
