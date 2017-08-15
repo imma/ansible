@@ -5,7 +5,6 @@ function _ansible_profile {
   PATH="$shome/bin:$PATH"
 
   ANSIBLE_VERSION="$(cat "$shome/.ansible-version.json" | jq -r '.[].version')"
-  ANSIBLE_CONTAINER_VERSION="$(cat "$shome/.ansible-container-version.json" | jq -r '.[].version')"
 }
 
 _ansible_profile

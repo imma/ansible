@@ -5,11 +5,9 @@ function version {
   source "$shome/script/profile"
 
   local ver_ansible="$(ansible --version 2>/dev/null | awk 'NR==1 {print $2}' || true)"
-  local ver_ansible_container="$(ansible-container version 2>/dev/null | awk 'NR==1 {print $4}' || true)"
   jq -n \
     --arg ansible "$ver_ansible" \
-    --arg ansible_container "$ver_ansible_container" \
-      '{ansible: $ansible, ansible_container: $ansible_container}'
+      '{ansible: $ansible}'
 }
 
 version "$@"
