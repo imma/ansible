@@ -3,11 +3,9 @@
 set -efu
 
 function main {
-  block compile virtualenv27 || block compile virtualenv27
-  (set +f; cd bin && ln -nfs \
-    ../vendor/virtualenv/bin/ansible \
-    ../vendor/virtualenv/bin/ansible-* \
-    .)
+  block compile pipenv27
+  local pth_ansible="$(pipenv27 run which ansible)"
+  (set +f; cd bin && ln -nfs "$pth_ansible" "$pth_ansible"-* . )
 }
 
 main "$@"
