@@ -4,8 +4,8 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  block compile pipenv27 "$@"
-  local pth_ansible="$(pipenv27 run which ansible)"
+  block compile pipenv "$@"
+  local pth_ansible="$(pipenv run which ansible)"
   mkdir -p "$shome/bin"
   (set +f; cd bin && ln -nfs "$pth_ansible" "$pth_ansible"-* . )
 }
