@@ -4,7 +4,7 @@ function main {
   local shome="$(cd -P -- "${BASH_SOURCE%/*}/.." && pwd -P)"
   source "$shome/script/profile"
 
-  block compile pipenv --two "$@"
+  block compile pipenv install --two "$@"
   local pth_ansible="$(pipenv run which ansible)"
   mkdir -p "$shome/bin"
   (set +f; cd bin && ln -nfs "$pth_ansible" "$pth_ansible"-* . )
